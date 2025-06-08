@@ -1,0 +1,12 @@
+pretrained/
+results/
+logs/
+runs/
+temp/
+run_copy.sh
+__pycache__
+.idea/
+run2.sh
+data/swat-original/
+data/wadi-original/
+data/swat2/
