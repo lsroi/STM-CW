@@ -1,0 +1,16 @@
+# 故障类型：CPU 压力（StressChaos）
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-cpu
+  namespace: chaos-testing
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - default
+  stressors:
+    cpu:
+      workers: 4
+      load: 90  # 高负载，明显拉高 CPU 使用率
+  duration: '25m'

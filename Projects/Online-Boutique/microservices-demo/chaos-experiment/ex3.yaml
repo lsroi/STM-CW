@@ -1,0 +1,16 @@
+# 故障类型：内存压力（StressChaos）
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-memory
+  namespace: chaos-testing
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - default
+  stressors:
+    memory:
+      workers: 2
+      size: '1gb'  # 分配大量内存
+  duration: '20m'

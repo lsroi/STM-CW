@@ -1,0 +1,13 @@
+# pod-kill
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: pod-failure
+  namespace: chaos-testing
+spec:
+  action: 'pod-kill'  # 执行故障类型
+  mode: 'one'  # 选择一个 Pod
+  selector:
+    namespaces:
+      - default  # 选择需要注入故障的命名空间
+  duration: '30s'  # 故障持续时间(pod-kill中无效)
